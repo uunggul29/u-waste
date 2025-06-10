@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/admin.css">
+    <link rel="stylesheet" href="../JS/buy.js">
+    <link rel="icon" href="../Assets/Logo/uwaste.png" type="image/png" sizes="16x16">
+    <title>Admin U-Waste</title>
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-database-compat.js"></script>
+
+    <!-- Konfigurasi Firebase -->
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyAA8XU1ZHlXjFuxRVauGH0BtLVx40G3ENk",
+            authDomain: "uwaste-4f273.firebaseapp.com",
+            databaseURL: "https://uwaste-4f273-default-rtdb.firebaseio.com",
+            projectId: "uwaste-4f273",
+            storageBucket: "uwaste-4f273.appspot.com",
+            messagingSenderId: "631518771734",
+            appId: "1:631518771734:web:cb05008ed0575486245337"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+        var database = firebase.database();
+    </script>
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="logo-details">
+            <img src="../Assets/logo/uwaste_nobg.png"width="80" height="100">
+            <span class="logo_name">Admin</span>
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a href="adminbuy.html" class="active">
+                    <i><img src="../Assets/logo/buy.png" width="25" height="25"></i>
+                    <span class="links_name">Buy</span>
+                </a>
+            </li>
+            <li>
+                <a href="adminsell.html">
+                    <i><img src="../Assets/logo/sell.png" width="25" height="25"></i>
+                    <span class="links_name">Sell</span>
+                </a>
+            </li>
+            <li class="log_out">
+                <a href="../index.html">
+                    <i><img src="../Assets/logo/back.png" width="25" height="25"></i>
+                    <span class="links_name">Back</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <section class="home-section">
+        <nav>
+            <div class="sidebar-button">
+                <i><img src="../Assets/logo/menu.png" width="25" height="25"></i>
+                <span class="dashboard">Buy</span>
+            </div>
+        </nav>
+
+
+        <div class="home-content">
+            <div class="sales-boxes">
+                <div class="recent-sales box">
+                    <div class="title">Recently Buy</div>
+                    <div class="sales-details">
+                        <ul class="details">
+                            <table border="2">
+                                <li class="topic">
+                                    <thead style="font-size: 29px;">
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Name Product</th>
+                                            <th>Delivery Address</th>
+                                            <th>Phone Number</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                </li>
+                                    <tbody style="font-size: 19px; font-weight: 400;" id="data-container"></tbody>
+                            </table>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function fetchData() {
+            var dataContainer = document.getElementById('data-container');
+            database.ref('/uwaste').once('value').then(function (snapshot) {
+                snapshot.forEach(function (childSnapshot) {
+                    var data = childSnapshot.val();
+                    var dataKey = childSnapshot.key; // Mendapatkan kunci data
+
+                    var row = document.createElement('tr');
+                    row.id = dataKey; // Set id baris sesuai dengan kunci data
+
+                    row.innerHTML = '<td>' + data.name + '</td><td><center>' + data.product + '</td></center>' + '<td><center>' + data.delivery + '</center></td><td><center>' + data.phone + '</center></td>' +
+                        '<td><button onclick="deleteData(\'' + dataKey + '\')">Delete</button></td>'; // Menambahkan tombol delete
+                    dataContainer.appendChild(row);
+                });
+            });
+        }
+
+        function deleteData(dataKey) {
+            var isConfirmed = confirm("Are you sure you want to delete this data?");
+            if (isConfirmed) {
+                var itemRef = database.ref('/uwaste/' + dataKey);
+
+                itemRef.remove()
+                    .then(function () {
+                        var row = document.getElementById(dataKey);
+                        row.parentNode.removeChild(row);
+                    })
+                    .catch(function (error) {
+                        console.error("Error removing data: ", error);
+                    });
+            }
+        }
+
+        fetchData();
+    </script>
+
+</body>
+</html>

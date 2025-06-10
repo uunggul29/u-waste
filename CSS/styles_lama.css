@@ -1,0 +1,250 @@
+/* General Styles */
+/* Gaya umum untuk elemen-elemen dasar di halaman */
+body {
+  margin: 0; /* Hilangkan margin bawaan dari body */
+  padding: 0; /* Hilangkan padding bawaan dari body */
+  box-sizing: border-box; /* Gunakan model box-sizing: border-box untuk menghitung total lebar/tinggi dengan memperhitungkan padding dan border */
+  font-family: 'Poppins', sans-serif; /* Gunakan font Poppins atau font sans-serif alternatif jika tidak tersedia */
+  background: #365486; /* Gunakan warna latar belakang #365486 */
+}
+#Home, #Sub-Home, #Buy, #Sell, #About {
+  background: #279EFF;
+}
+
+
+/* Navigation Styles */
+/* Gaya untuk navigasi */
+nav {
+  position: fixed; /* Tetapkan posisi tetap agar tetap terlihat saat digulir */
+  left: 0; /* Letakkan ke kiri */
+  top: 0; /* Letakkan ke atas */
+  width: 100%; /* Lebar 100% */
+  height: 75px; /* Tinggi 75px */
+  background: #191d88; /* Gunakan warna latar belakang #191d88 */
+}
+/* Gaya untuk konten di dalam navigasi */
+nav .navbar {
+  display: flex; /* Gunakan tata letak flex */
+  align-items: center; /* Pusatkan secara vertikal */
+  justify-content: space-between; /* Posisikan elemen di antara sesuai dengan ruang yang tersedia */
+  height: 100%; /* Gunakan tinggi 100% dari navigasi */
+  max-width: 90%; /* Lebar maksimum 90% dari lebar navigasi */
+  background: #191D88; /* Gunakan warna latar belakang #191D88 */
+  margin: auto; /* Atur margin secara otomatis */
+  gap: 20px; /* Jarak antar elemen dalam flex container */
+}
+/* Gaya untuk logo dalam navigasi */
+nav .navbar .logo a {
+  color: #fff; /* Gunakan warna teks putih */
+  font-size: 27px; /* Ukuran font 27px */
+  font-weight: 600; /* Ketebalan font 600 */
+  text-decoration: none; /* Hilangkan dekorasi tautan */
+}
+/* Gaya untuk menu dalam navigasi */
+nav .navbar .menu {
+  display: flex; /* Gunakan tata letak flex */
+  font-weight: bold; /* Ketebalan font tebal */
+}
+/* Gaya untuk setiap elemen daftar dalam menu navigasi */
+.navbar .menu li {
+  list-style: none; /* Hilangkan gaya daftar */
+  margin: 0 15px; /* Atur margin kiri dan kanan */
+}
+/* Gaya untuk setiap tautan dalam menu navigasi */
+.navbar .menu li a {
+  color: #fff; /* Gunakan warna teks putih */
+  font-size: 17px; /* Ukuran font 17px */
+  font-weight: 500; /* Ketebalan font 500 */
+  text-decoration: none; /* Hilangkan dekorasi tautan */
+}
+/* Gaya untuk tautan tebal dalam menu navigasi */
+.navbar .menu li b {
+  color: #fff; /* Gunakan warna teks putih */
+  font-size: 17px; /* Ukuran font 17px */
+  font-weight: 500; /* Ketebalan font 500 */
+  text-decoration: none; /* Hilangkan dekorasi tautan */
+  font-weight: bold; /* Ketebalan font tebal */
+}
+/* Gaya hover untuk setiap tautan dalam menu navigasi */
+.navbar .menu li a:hover {
+  color: #FAEF5D; /* Ubah warna teks menjadi #FAEF5D saat dihover */
+}
+
+/* Section Styles */
+/* Gaya untuk bagian-bagian konten */
+section {
+  padding: 10px 0; /* Padding atas dan bawah 10px, padding kiri dan kanan 0 */
+  display: flex; /* Gunakan tata letak flex */
+  text-align: center; /* Pusatkan teks secara horizontal */
+  height: 90%; /* Gunakan tinggi 90% dari konten */
+  width: 100%; /* Gunakan lebar 100% dari konten */
+  align-items: center; /* Pusatkan secara vertikal */
+  justify-content: center; /* Pusatkan secara horizontal */
+  color: #96c7e8; /* Gunakan warna teks #96c7e8 */
+  font-size: 70px; /* Ukuran font 70px */
+}
+
+
+/* Container Styles */
+.container1 {
+  font-size: medium;
+  height: 450px;
+  width: 100%;
+  margin: 0 auto;
+  background-image: url('../Assets/Background/1.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.container2 {
+  font-size: medium;
+  padding: 8px;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  background-image: url('../Assets/Background/2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.container3 {
+  font-size: medium;
+  padding: 8px;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  background-image: url('../Assets/Background/3.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.container4 {
+  font-size: medium;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  background-image: url('../Assets/Background/4.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.container5 {
+  font-size: medium;
+  padding: 30px;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  background-image: url('../Assets/Background/5.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+    .container10 {
+      font-size: medium;
+      padding: 5px;
+      width: 100%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+    .container11 {
+      font-size: medium;
+      padding: 25px;
+      height: 100%;
+      width: 100%;
+      margin: 0 auto;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
+
+
+
+/* Box Styles */
+/* Gaya untuk kotak overlay */
+.overlay-box1 {
+  width: 600px; /* Lebar 600px */
+  height: 400px; /* Tinggi 400px */
+  background-color: rgba(67, 161, 255, 0.8); /* Gunakan warna latar belakang dengan transparansi 80% */
+  border-radius: 10px; /* Border-radius 10px */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Efek bayangan */
+  padding: 20px; /* Padding 20px */
+  text-align: justify; /* Pusatkan teks secara rata */
+  margin: auto; /* Atur margin secara otomatis */
+  color: white; /* Gunakan warna teks putih */
+}
+/* Gaya untuk kotak overlay 2 */
+.overlay-box2 {
+  padding: 30px; /* Padding 30px */
+  width: 580px; /* Lebar 580px */
+  height: 280px; /* Tinggi 280px */
+  background-color: rgba(255, 255, 255, 0.8); /* Gunakan warna latar belakang dengan transparansi 80% */
+  border-radius: 10px; /* Border-radius 10px */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Efek bayangan */
+  padding: 20px; /* Padding 20px */
+  text-align: justify; /* Pusatkan teks secara rata */
+  margin: auto; /* Atur margin secara otomatis */
+}
+/* Gaya untuk heading level 2 */
+h2 {
+  margin-bottom: 10px; /* Margin bawah 10px */
+  color: #333; /* Gunakan warna teks #333 */
+}
+/* Gaya untuk teks tebal */
+b {
+  text-decoration: none; /* Hilangkan dekorasi tautan */
+  color: #000000; /* Gunakan warna teks hitam */
+  font-weight: bold; /* Ketebalan font */
+  justify-content: left; /* Pusatkan secara horizontal */
+}
+
+
+/* Button Styles */
+/* Gaya untuk tombol */
+.btn {
+  display: inline-block; /* Tampilkan sebagai elemen inline blok */
+  background-color: #63ec54; /* Gunakan warna latar belakang #63ec54 */
+  color: rgb(255, 255, 255); /* Gunakan warna teks putih */
+  padding: 10px 30px; /* Padding 10px atas dan bawah, 30px kiri dan kanan */
+  text-decoration: none; /* Hilangkan dekorasi tautan */
+  font-weight: bold; /* Ketebalan font */
+  font-size: 16px; /* Ukuran font 16px */
+  border-radius: 20px; /* Border-radius 20px */
+  position: 10%; /* Gunakan posisi 10% dari elemen yang terdekat */
+}
+.btn:hover {
+  background-color: #A8DF8E; /* Ubah warna latar belakang menjadi #A8DF8E saat dihover */
+}
+
+
+/* Font Styles */
+/* Gaya untuk font */
+.font1 {
+  margin: 150px; /* Atur margin 150px */
+  color: rgb(255, 255, 255); /* Gunakan warna teks putih */
+  font-family: 'Poppins', sans-serif; /* Gunakan font Poppins atau font sans-serif alternatif jika tidak tersedia */
+  font-weight: bolder; /* Ketebalan font bolder */
+  font-size: 200%; /* Ukuran font 200% */
+  text-shadow: #094d7b 3px 2px 1px; /* Efek bayangan teks */
+}
+.font2 {
+  margin: 200px; /* Atur margin 200px */
+  color: rgb(255, 255, 255); /* Gunakan warna teks putih */
+  font-family: 'Poppins', sans-serif; /* Gunakan font Poppins atau font sans-serif alternatif jika tidak tersedia */
+  font-weight: bolder; /* Ketebalan font bolder */
+  font-size: 180%; /* Ukuran font 180% */
+  text-shadow: #094d7b 3px 2px 1px; /* Efek bayangan teks */
+}
+
+
+/* Footer Styles */
+/* Gaya untuk footer */
+footer {
+  background-color: #211197; /* Gunakan warna latar belakang #211197 */
+  color: white; /* Gunakan warna teks putih */
+  text-align: center; /* Pusatkan teks secara horizontal */
+  padding: 10px 0; /* Padding 10px atas dan bawah */
+  bottom: 0; /* Tempatkan di bagian bawah */
+  width: 100%; /* Lebar 100% */
+  height: 45px; /* Tinggi 45px */
+}

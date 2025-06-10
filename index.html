@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="Assets/logo/uwaste.png" type="image/png" sizes="16x16">
+    <link rel="stylesheet" href="CSS/styles.css">
+    <title>U-Waste by Arjuna</title>
+</head>
+
+<body>
+    <nav>
+        <div class="navbar">
+            <div class="logo" id="logoContainer">
+                <a href="index.html">
+                    <img src="Assets/logo/uwaste_nobg.png" alt="U-Waste Logo" id="logoImage" width="80" height="100">
+                </a>
+            </div>
+            <ul class="menu">
+                <li><b href="#Home">Home</b></li>
+                <li><b href="#Buy">Buy</b></li>
+                <li><b href="#Sell">Sell</b></li>
+                <li><a href="HTML/marketplace.html">Marketplace</a></li>
+                <li><b href="#About">About</b></li>
+            </ul>
+        </div>
+    </nav>
+    <section id="Transition">
+        <div class="container-sub"></div>
+    </section>
+    <section id="Home">
+        <div class="container1">
+            <div class="font1">
+                <p style="font-size: 185%;">Welcome to U-Waste</p>
+                <p style="font-size: 120%;">#ubahsampahjadiberkah</p>
+            </div>
+        </div>
+    </section>
+    <section id="Sub-Home">
+        <div class="container2">
+            <div class="overlay-box1">U-Waste Goal</div>
+            <br>
+            <div class="overlay-box2">
+                <p>1. Encourage Recycling and Waste Management:</p>
+                <p>A platform for people to buy and sell waste, encouraging responsible recycling and waste management practices.</p>
+            </div>
+            <div class="overlay-box2">
+                <p>2. Local Economic Empowerment:</p>
+                <p>Empowering communities by creating additional economic opportunities through the sale of waste, especially for those who are less fortunate.</p>
+            </div>
+            <div class="overlay-box2">
+                <p>3. Environmental Awareness:</p>
+                <p>Educate and increase public awareness of the importance of the individual's role in reducing waste and supporting environmental sustainability.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="Buy">
+    <div class="container3">
+        <div class="font2">
+            <p>want to buy used goods?</p>
+            <a href="HTML/buy.html" class="btn">BUY</a>
+        </div>
+    </div>
+</section>
+<section id="Sell">
+    <div class="container4">
+        <div class="font3">
+            <p>Want to sell your trash?</p>
+            <a href="HTML/sell.html" class="btn">SELL</a>
+        </div>
+    </div>
+</section>
+<section id="About">
+    <div class="container5">
+        <div class="overlay-box3">
+            <h2 style="text-align: center;">ABOUT</h2>
+            <br><b style="padding: 50px;">U-Waste is an innovative solution that combines information technology with Bunga Raya Bank Sampah to raise awareness of the community about cyber waste, as well as ensuring timely and quality access for target groups.</b><br>
+            <br><b style="padding: 50px;">This makes it easy for U-Waste users and Bunga Raya Bank Sampah to manage and access recycling transactions efficiently, and to turn the waste into a basic need through U-Waste in collaboration with Bunga Raya Bank Sampah.</b><br>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2024 U-Waste | All rights reserved.</p>
+</footer>
+
+<script>
+    //Logo
+    const logoContainer = document.getElementById('logoContainer');
+    const logoImage = document.getElementById('logoImage');
+    logoContainer.addEventListener('mouseenter', function () {
+        logoImage.style.transform = 'scale(1.2)';
+    });
+    logoContainer.addEventListener('mouseleave', function () {
+        logoImage.style.transform = 'scale(1)';
+    });
+
+    
+    //Bergulir
+    document.addEventListener("DOMContentLoaded", function() {
+    const menuLinks = document.querySelectorAll(".menu b");
+
+    menuLinks.forEach(function(menuLink) {
+        menuLink.addEventListener('click', function(event) {
+            event.preventDefault(); // Menghentikan perilaku default dari tautan
+            
+            const targetId = this.getAttribute('href'); // Mendapatkan ID tujuan dari tautan
+            const targetSection = document.querySelector(targetId); // Menemukan elemen dengan ID yang sesuai
+
+            if (targetSection) {
+                const offset = -75; // Penyesuaian offset untuk menggulir sedikit di atas elemen target
+                const targetPosition = targetSection.getBoundingClientRect().top + window.pageYOffset + offset;
+                window.scrollTo({ top: targetPosition, behavior: 'smooth' }); // Menggulir ke elemen dengan efek halus
+                }
+            });
+        });
+    });
+</script>
+
+</body>
+</html>

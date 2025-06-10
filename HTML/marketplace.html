@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../Assets/Logo/uwaste.png" type="image/png" sizes="16x16">
+    <link rel="stylesheet" href="../CSS/marketplace.css">
+
+    <title>U-Waste Marketplace</title>
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-database-compat.js"></script>
+
+    <!-- Konfigurasi Firebase -->
+    <script>
+        const firebaseConfig = {
+        apiKey: "AIzaSyDKgxJqorvDwAC6c3M4ZukLhNmrwRsG0s4",
+        authDomain: "uwaste-sell-e15cb.firebaseapp.com",
+        databaseURL: "https://uwaste-sell-e15cb-default-rtdb.firebaseio.com",
+        projectId: "uwaste-sell-e15cb",
+        storageBucket: "uwaste-sell-e15cb.appspot.com",
+        messagingSenderId: "31811153608",
+        appId: "1:31811153608:web:8a12fab94472fc88073ffd"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+        var database = firebase.database();
+    </script>
+</head>
+
+<body>
+    <nav>
+        <div class="navbar">
+            <div class="logo" id="logoContainer">
+                <a href="../index.html">
+                    <img src="../Assets/Logo/uwaste_nobg.png" alt="U-Waste Logo" id="logoImage" width="80" height="100">
+                </a>
+            </div>
+
+            <ul class="menu">
+                <li><b>Marketplace</b></li>
+                <li><a href="../index.html">Back</a></li>
+            </ul>
+        </div>
+    </nav>
+
+        <section id="Transition">
+            <div class="containersub"></div>
+        </section>
+
+    <!--HEAD-->
+    <section id="Head">
+        <div class="container1">
+            <h1>Marketplace</h1>
+            <p>less waste, more smiles</p>
+        </div>
+    </section>
+    
+
+
+    <!--BODY-->
+    <section id="Body">
+        <div class="container2">
+            <div id="data-container"></div>
+            <!-- Data dari Firebase akan diisi di sini menggunakan JavaScript -->
+        </div>
+    </section>
+
+
+
+    <footer>
+        <p>&copy; 2024 U-Waste | All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript Logo
+            const logoContainer = document.getElementById('logoContainer');
+            const logoImage = document.getElementById('logoImage');
+
+            logoContainer.addEventListener('mouseenter', function () {
+                logoImage.style.transform = 'scale(1.2)';
+            });
+
+            logoContainer.addEventListener('mouseleave', function () {
+                logoImage.style.transform = 'scale(1)';
+            });
+            
+            // JavaScript function to handle the purchase
+            function buyProduct(productName) {
+                alert('You have purchased ' + productName);
+                // Add additional logic for processing the purchase if needed
+            }
+        //
+
+        function fetchData() {
+            var dataContainer = document.getElementById('data-container');
+            database.ref('/uwaste-sell').once('value').then(function (snapshot) {
+                snapshot.forEach(function (childSnapshot) {
+                    var data = childSnapshot.val();
+                    var dataKey = childSnapshot.key; // Mendapatkan kunci data
+
+                    var row = document.createElement('div');
+                    row.classList.add( "product-box" );
+                    row.id = dataKey; // Set id baris sesuai dengan kunci data
+
+                    row.innerHTML = 
+                    '<img src="' + data.image + '">' +
+                    '<h1>' + data.product + '</h1>' +
+                    '<li> Seller: ' + data.name + '</li>' +
+                    '<li> Location: ' + data.address + '</li>' +
+                    '<li> Phone: ' + data.phone + '</li>' +
+                    '<li> Price: ask seller </li><br><br>' +
+                    '<div class="button">'+
+                        '<a href="buy.html">Buy</a>'+
+                    '</div>';
+                    dataContainer.appendChild(row);
+                });
+            });
+        }
+
+        fetchData();
+</script>
+
+</body>
+
+</html>
