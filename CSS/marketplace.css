@@ -1,0 +1,195 @@
+/* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+
+
+/* Navigation Styles */
+nav {
+  position: fixed;
+  width: 100%;
+  height: 75px;
+  background: #191d88;
+}
+nav .navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  max-width: 90%;
+  background: #191D88;
+  margin: auto;
+  gap: 20px;
+}
+nav .navbar .logo a {
+  color: #fff;
+  font-size: 27px;
+  font-weight: 600;
+  text-decoration: none;
+}
+nav .navbar .menu {
+  display: flex;
+  font-weight: bold;
+}
+.navbar .menu li {
+  list-style: none;
+  margin: 0 15px;
+}
+.navbar .menu li a {
+  color: #fff;
+  font-size: 17px;
+  font-weight: 500;
+  text-decoration: none;
+}
+.navbar .menu li b {
+  color: #fff;
+  font-size: 17px;
+  font-weight: 500;
+  font-weight: bold;
+}
+.navbar .menu li a:hover {
+  color: #FAEF5D;
+}
+
+
+
+/* Section Styles */
+section {
+  display: flex;
+  text-align: center;
+  height: 90%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  color: #96c7e8;
+  font-size: 70px;
+}
+
+
+
+/* Container Styles */
+  .containersub {
+    font-size: medium;
+    padding: 40px;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(67, 161, 255, 0.8);
+  }
+.container1 {
+  height: 250px;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #3468C0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+  .container1 h1 {
+    font-size: 100px;
+    margin-bottom: 10px; 
+    color: white;
+    padding: 10px;
+    line-height: 20px;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+  .container1 p {
+    font-size: 35px;
+    padding-top: 10px;
+    text-decoration: none;
+    color: rgb(217, 213, 213);
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+
+.container2 {
+  font-size: medium;
+  padding: 15px;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  background-color: #F7EFE5;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+
+
+.product-box {
+  display: inline-block;
+  height:max-content; /* Total tinggi termasuk padding dan border */
+  width: 220px; /* Total lebar termasuk padding dan border */
+  padding: 20px;
+  border: 10px solid #ddd; /* Ubah border ke solid */
+  border-radius: 20px; /* Kurangi border-radius */
+  background-color: #1B6B93;
+  margin: 30px;
+  color: white;
+  line-height: normal;
+  box-sizing: border-box; /* Tetapkan box-sizing untuk memperhitungkan padding dan border dalam ukuran total */
+  padding-bottom: 30px;
+}
+
+.product-box img {
+  height: 120px;
+  width: 160px; /* Sesuaikan lebar gambar agar proporsional */
+  border-radius: 10px;
+  display: block; /* Hindari celah bawah gambar */
+  margin: 0 auto 15px; /* Pusatkan gambar secara horizontal dan tambahkan margin bawah */
+}
+
+.product-box h1 {
+  font-size: 20px;
+  margin: 0; /* Hapus margin atas dan bawah */
+}
+
+.product-box li {
+  font-size: 12px;
+  margin-top: 5px;
+  text-align: left;
+}
+
+
+
+/* Styling for the button class */
+.button a {
+  width: 50px;
+  padding: 10px 20px;
+  background-color: #63ec54;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  position: static; /* Tambahkan position */
+}
+/* Hover effect for the button class */
+.button:hover a {
+  background-color: #A8DF8E; /* Change background color on hover */
+  color: #fff; /* Change text color on hover if needed */
+}
+
+
+
+/* Footer Styles */
+footer {
+  background-color: #211197;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  bottom: 0;
+  width: 100%;
+  height: 45px;
+  bottom: 0;
+}
+
+

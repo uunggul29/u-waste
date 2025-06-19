@@ -1,0 +1,219 @@
+/* General Styles */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  background: #034ea3;
+}
+#Home,
+#Sub-Home,
+#Sell,
+#About {
+  background: #353edb;
+}
+
+/* Navigation Styles */
+nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 75px;
+  background: #191d88;
+}
+nav .navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  max-width: 90%;
+  background: #191d88;
+  margin: auto;
+  gap: 20px;
+}
+nav .navbar .logo a {
+  color: #fff;
+  font-size: 27px;
+  font-weight: 600;
+  text-decoration: none;
+}
+nav .navbar .menu {
+  display: flex;
+  font-weight: bold;
+}
+.navbar .menu li {
+  list-style: none;
+  margin: 0 15px;
+}
+.navbar .menu li a {
+  color: #fff;
+  font-size: 17px;
+  font-weight: 500;
+  text-decoration: none;
+}
+.navbar .menu li b {
+  color: #fff;
+  font-size: 17px;
+  font-weight: 500;
+  text-decoration: none;
+  font-weight: bold;
+}
+.navbar .menu li a:hover {
+  color: #faef5d;
+}
+
+/* Section Styles */
+section {
+  padding: 10px 0;
+  display: flex;
+  text-align: center;
+  height: 90%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  color: #96c7e8;
+  font-size: 70px;
+}
+
+.container {
+  padding: 30px;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  background-image: url("../Assets/Background/form.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.containersub {
+  font-size: medium;
+  padding: 25px;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Form Container Styles */
+.containerform {
+  color: #000000;
+  width: 600px;
+  height: auto;
+  background-color: #fff;
+  border-radius: 8px;
+  margin: auto;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #211197;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 14px;
+  font-size: 25%;
+}
+label {
+  font-size: 100%; /* Ukuran font label */
+  margin-bottom: 1px; /* Jarak antara label dan input */
+  display: block; /* Membuat label menjadi blok untuk mendapatkan satu baris penuh */
+}
+input {
+  width: 100%; /* Lebar input 100% dari wadahnya */
+  padding: 10px; /* Ruang dalam di sekitar teks dalam input */
+  font-size: 14px; /* Ukuran font input */
+  margin-bottom: 10px; /* Jarak antara input dan elemen berikutnya */
+  background-color: #d8d6d6;
+}
+input,
+select {
+  padding: 4px;
+  margin-bottom: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  height: 33px;
+  background-color: #d8d6d6;
+}
+
+.btn {
+  display: inline-block;
+  background-color: #2980b9;
+  color: rgb(255, 255, 255);
+  padding: 10px 30px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 5px;
+  position: 10%;
+  border: 1px solid grey;
+}
+.btn:hover {
+  background-color: #3861ca;
+  color: yellow;
+}
+.waste-input-group {
+  display: flex;
+}
+.product-container,
+.phone-container {
+  flex: 1;
+  padding: 10px;
+}
+#delivery-address {
+  width: 95%;
+  height: 65px;
+  padding: 10px;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+#pickup-address {
+  width: 95%;
+  height: 50px;
+  padding: 10px;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* Button Form Styles */
+button {
+  width: 30%;
+}
+.button1 {
+  padding: 4px;
+  background-color: blue;
+  text-align: center;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 2px;
+}
+.button1:hover {
+  background-color: yellow;
+}
+.button2 {
+  padding: 4px;
+  background-color: red;
+  text-align: center;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 2px;
+}
+.button2:hover {
+  background-color: yellow;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #211197;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  height: 45px;
+}

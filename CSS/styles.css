@@ -1,0 +1,231 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  background: blue;
+}
+#Home, #Sub-Home, #Buy, #Sell, #About {
+  background: yellow;
+}
+nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 75px;
+  background: #191d88;
+}
+nav .navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  max-width: 90%;
+  background: #191D88;
+  margin: auto;
+  gap: 20px;
+}
+nav .navbar .logo a {
+  color: #fff;
+  font-size: 27px;
+  font-weight: 600;
+  text-decoration: none;
+}
+nav .navbar .menu {
+  display: flex;
+  font-weight: bold;
+}
+.navbar .menu li {
+  list-style: none;
+  margin: 0 15px;
+}
+.navbar .menu li a {
+  color: #fff;
+  font-size: 17px;
+  font-weight: 500;
+  text-decoration: none;
+  position: relative;
+}
+.navbar .menu li a:hover {
+  color: #FAEF5D;
+  font-size: 19px;
+}
+.navbar .menu li b {
+  color: #fff;
+  font-size: 17px;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+}
+.navbar .menu li b:hover {
+  color: #FAEF5D;
+  font-size: 19px;
+}
+section {
+  padding: 5px 0;
+  display: flex;
+  text-align: center;
+  height: 90%;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  color: #96c7e8;
+  font-size: 70px;
+}
+.container1 {
+  font-size: medium;
+  padding: 4px;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  background-image: url('../Assets/Background/memphis.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.container2 {
+  font-size: medium;
+  font-weight: bolder;
+  padding: 8px;
+  height: 100%;
+  width: 100%;
+  margin: 0 auto;
+  background-image: url('../Assets/Background/2.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.container3 {
+  font-size: medium;
+  height: 440px;
+  width: 100%;
+  padding: 20px;
+  background-image: url('../Assets/Background/Buy.jpg');
+  background-size: cover;
+}
+.container4 {
+  font-size: medium;
+  height: 440px;
+  width: 100%;
+  padding: 20px;
+  background-image: url('../Assets/Background/Sell.jpg');
+  background-size: cover;
+}
+.container5 {
+  font-size: medium;
+  padding: 45px;
+  height: auto;
+  width: 100%;
+  margin: 0 auto;
+  background-image: url('../Assets/Background/5.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+  .container-sub {
+    font-size: medium;
+    padding: 32px;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+.overlay-box1 {
+  width: 320px;
+  height: 55px;
+  background-color: rgba(67, 161, 255, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  margin: auto;
+  color: white;
+  font-size: 40px;
+  padding: 20px;
+  margin-top: 30px;
+}
+.overlay-box2 {
+  width: auto;
+  height: 80px;
+  background-color: rgba(67, 161, 255, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  text-align: left;
+  color: white;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+.overlay-box3 {
+  padding: 30px;
+  width: 580px;
+  height: 280px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  text-align: justify;
+  margin: auto;
+}
+h2 {
+  margin-bottom: 10px;
+  color: #333;
+}
+b {
+  color: #000000;
+  font-weight: bold;
+  justify-content: left;
+}
+.btn {
+  display: inline-block;
+  background-color: #63ec54;
+  color: rgb(255, 255, 255);
+  padding: 10px 30px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 20px;
+}
+.btn:hover {
+  background-color: #A8DF8E;
+}
+.font1 {
+  margin: 150px;
+  color: rgb(255, 255, 255);
+  font-family: 'Poppins', sans-serif;
+  font-weight: bolder;
+  font-size: 200%;
+  text-shadow: #094d7b 3px 2px 1px;
+}
+.font2 {
+  margin-top: 170px;
+  margin-right: 50px;
+  color: rgb(255, 255, 255);
+  font-family: 'Poppins', sans-serif;
+  font-weight: bolder;
+  font-size: 360%;
+  text-shadow: #094d7b 3px 2px 1px;
+  text-align: right;
+}
+.font3 {
+  margin-top: 170px;
+  margin-left: 50px;
+  color: rgb(255, 255, 255);
+  font-family: 'Poppins', sans-serif;
+  font-weight: bolder;
+  font-size: 360%;
+  text-shadow: #094d7b 3px 2px 1px;
+  text-align: left;
+}
+footer {
+  background-color: #211197;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  bottom: 0;
+  width: 100%;
+  height: 45px;
+}

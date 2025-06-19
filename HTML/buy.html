@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/form.css">
+    <script src=""></script>
+    <link rel="stylesheet" href="../JS/buy.js">
+    <title>U-Waste Buy</title>
+</head>
+
+<body>
+    <nav>
+        <div class="navbar">
+            <div class="logo" id="logoContainer">
+                <a href="../index.html">
+                    <img src="../Assets/Logo/uwaste_nobg.png" alt="U-Waste Logo" id="logoImage" width="80" height="100">
+                </a>
+            </div>
+
+            <ul class="menu">
+                <li><b>Buy</b></li>
+                <li><a href="../index.html">Back</a></li>
+            </ul>
+        </div>
+    </nav> 
+
+        <section id="Transition">
+            <div class="containersub"></div>
+        </section>
+
+    <section id="Buy">
+        <div class="container">
+            <div class="containerform">
+                <form action="" id="buying" autocomplete="off">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your name here" required>
+        
+                    <div class="waste-input-group">
+                        <div class="product-container">
+                            <label for="product">Name Product:</label>
+                            <input type="text" id="productname" name="product" placeholder="Enter your name product here" required>
+                        </div>
+
+        
+                        <div class="phone-container">
+                            <label for="phone">Phone Number:</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number here" required>
+                        </div>
+                    </div>
+                        
+                        <div class="address-container">
+                        <label for="delivery-address">Delivery Address</label>
+                        <input type="text" id="delivery-address" name="delivery-address" placeholder="Enter your address here" required>
+                        </div>      
+        
+                        <div class="button">
+                            <button class="button1" type="submit">Send Form</button>
+                            <button class="button2" type="reset" onclick="resetForm()">Reset Form</button>
+                        </div>
+                </form>
+            </div>
+        </div>
+      </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+    <script src="../JS/buy.js"></script>
+
+<footer>
+    <p>&copy; 2024 U-Waste | All rights reserved.</p>
+</footer>
+
+<script>
+    const logoContainer = document.getElementById('logoContainer');
+    const logoImage = document.getElementById('logoImage');
+
+    logoContainer.addEventListener('mouseenter', function () {
+        logoImage.style.transform = 'scale(1.2)';
+    });
+
+    logoContainer.addEventListener('mouseleave', function () {
+        logoImage.style.transform = 'scale(1)';
+    });
+</script>
+
+<!-- Insert this script at the bottom of the HTML, but before you use any Firebase services -->
+<!-- tadi lupa hayoo masukan ini di cdn -->
+
+<script type="module">
+    
+    import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js'
+
+    // If you enabled Analytics in your project, add the Firebase SDK for Google Analytics
+    import { getAnalytics } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-analytics.js'
+
+    // Add Firebase products that you want to use
+    import { getAuth } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-auth.js'
+    import { getFirestore } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore.js'
+
+</script>
+
+
+</body>
+</html>

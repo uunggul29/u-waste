@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/admin.css">
+    <link rel="icon" href="../Assets/logo/uwaste.png" type="image/png" sizes="16x16">
+    <title>Admin U-Waste</title>
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.0.2/firebase-database-compat.js"></script>
+
+    <!-- Konfigurasi Firebase -->
+    <script>
+        const firebaseConfig = {
+        apiKey: "AIzaSyDKgxJqorvDwAC6c3M4ZukLhNmrwRsG0s4",
+        authDomain: "uwaste-sell-e15cb.firebaseapp.com",
+        databaseURL: "https://uwaste-sell-e15cb-default-rtdb.firebaseio.com",
+        projectId: "uwaste-sell-e15cb",
+        storageBucket: "uwaste-sell-e15cb.appspot.com",
+        messagingSenderId: "31811153608",
+        appId: "1:31811153608:web:8a12fab94472fc88073ffd"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+        var database = firebase.database();
+    </script>
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="logo-details">
+            <img src="../Assets/logo/uwaste_nobg.png"width="80" height="100">
+            <span class="logo_name">Admin</span>
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a href="adminbuy.html">
+                    <i><img src="../Assets/logo/buy.png" width="25" height="25"></i>
+                    <span class="links_name">Buy</span>
+                </a>
+            </li>
+            <li>
+                <a href="adminsell.html" class="active">
+                    <i><img src="../Assets/logo/sell.png" width="25" height="25"></i>
+                    <span class="links_name">Sell</span>
+                </a>
+            </li>
+            <li class="log_out">
+                <a href="../index.html">
+                    <i><img src="../Assets/logo/back.png" width="25" height="25"></i>
+                    <span class="links_name">Back</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <section class="home-section">
+        <nav>
+            <div class="sidebar-button">
+                <i><img src="../Assets/logo/menu.png" width="25" height="25"></i>
+                <span class="dashboard">Sell</span>
+            </div>
+        </nav>
+
+
+        <div class="home-content">
+            <div class="sales-boxes">
+                <div class="recent-sales box">
+                    <div class="title">Recently Sell</div>
+                    <div class="sales-details">
+                        <ul class="details">
+                            <table border="2">
+                                <li class="topic">
+                                    <thead style="font-size: 29px;">
+                                        <tr>
+                                            <th>Name</th>
+                                            <th>Product</th>
+                                            <th>Type</th>
+                                            <th>Pick-Up Address</th>
+                                            <th>Pick-Up Date</th>
+                                            <th>Phone Number</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                </li>
+                                    <tbody style="font-size: 19px; font-weight: 400;" id="data-container"></tbody>
+                            </table>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function fetchData() {
+            var dataContainer = document.getElementById('data-container');
+            database.ref('/uwaste-sell').once('value').then(function (snapshot) {
+                snapshot.forEach(function (childSnapshot) {
+                    var data = childSnapshot.val();
+                    var dataKey = childSnapshot.key; // Mendapatkan kunci data
+
+                    var row = document.createElement('tr');
+                    row.id = dataKey; // Set id baris sesuai dengan kunci data
+
+                    row.innerHTML = '<td><center>' + data.name + '</center></td><td><center>' + data.product + '</center></td><td><center>' + data.waste + '</center></td><td><center>' + data.address + '</center></td><td><center>' + data.date + '</center></td><td><center>' + data.phone + '</center></td>' +
+                    '<td><center><button onclick="deleteData(\'' + dataKey + '\')">Delete</button></center></td>'; // Menambahkan tombol delete
+                    dataContainer.appendChild(row);
+                });
+            });
+        }
+
+        function deleteData(dataKey) {
+            var isConfirmed = confirm("Are you sure you want to delete this data?");
+            if (isConfirmed) {
+                var itemRef = database.ref('/uwaste-sell/' + dataKey);
+
+                itemRef.remove()
+                    .then(function () {
+                        var row = document.getElementById(dataKey);
+                        row.parentNode.removeChild(row);
+                    })
+                    .catch(function (error) {
+                        console.error("Error removing data: ", error);
+                    });
+            }
+        }
+
+        fetchData();
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../Assets/Logo/uwaste.png" type="image/png" sizes="16x16">
+    <link rel="stylesheet" href="../CSS/form.css">
+    <title>U-Waste Sell</title>
+</head>
+
+<body>
+    <nav>
+        <div class="navbar">
+            <div class="logo" id="logoContainer">
+                <a href="../index.html">
+                    <img src="../Assets/Logo/uwaste_nobg.png" alt="U-Waste Logo" id="logoImage" width="80" height="100">
+                </a>
+            </div>
+
+            <ul class="menu">
+                <li><b>Sell</b></li>
+                <li><a href="../index.html">Back</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="Transition">
+        <div class="containersub"></div>
+    </section>
+
+    <section id="Sell">
+        <div class="container">
+            <div class="containerform">
+                <form action="" id="selling" autocomplete="off" enctype="multipart/form-data">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name here" required>
+
+                    <label for="product">Name Product:</label>
+                    <input type="text" id="product" name="product" placeholder="Enter your name product here" required>
+
+                    <div class="waste-input-group">
+                        <div class="date-container">
+                            <label for="pickup-date">Pick-Up Date:</label>
+                            <input type="datetime-local" id="pickup-date" name="pickup-date" required>
+                        </div>
+
+                        <div class="waste-type-container">
+                            <label for="waste-type">Type of Waste:</label>
+                            <select id="waste-type" name="waste-type" required>
+                                <option value="Paper">Paper</option>
+                                <option value="Plastik">Plastic</option>
+                                <option value="Metal">Metal</option>
+                                <option value="Glass">Glass</option>
+                            </select>
+                        </div>
+
+                        <div class="phone-container">
+                            <label for="phone">Phone Number:</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number here" required>
+                        </div>
+                    </div>
+
+                    <div class="file-upload-container">
+                        <label for="image-upload">Upload Image:</label>
+                        <input type="file" id="image" name="image-upload" accept="image/*">
+                    </div>
+
+                    <div class="address-container">
+                        <label for="pickup-address">Pick-Up Address:</label>
+                        <input type="text" id="pickup-address" name="pickup-address" placeholder="Enter your pick-up address here" required>
+                    </div>
+
+                    <div class="button">
+                        <button class="button1" type="submit">Send Form</button>
+                        <button class="button2" type="reset" onclick="resetForm()">Reset Form</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 U-Waste | All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1/firebase.js"></script>
+    <script src="../JS/sell.js"></script>
+
+    <script>
+        const logoContainer = document.getElementById('logoContainer');
+        const logoImage = document.getElementById('logoImage');
+
+        logoContainer.addEventListener('mouseenter', function () {
+            logoImage.style.transform = 'scale(1.2)';
+        });
+
+        logoContainer.addEventListener('mouseleave', function () {
+            logoImage.style.transform = 'scale(1)';
+        });
+
+        function resetForm() {
+            // Mendapatkan elemen formulir
+            var form = document.getElementById('selling');
+
+            // Mereset formulir
+            form.reset();
+        }
+    </script>
+
+</body>
+
+</html>
